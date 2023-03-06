@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Clicker+Script&family=Dancing+Script:wght@700&family=Kanit:ital,wght@0,400;0,600;1,300;1,700&family=Lobster&family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@200;300;400;500;600&display=swap');
+*{margin: 0;
+padding: 0; 
+box-sizing: border-box;
+}
+a{text-decoration: none;}
+button{cursor: pointer;}
+body{font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+background: rgb(237, 191, 191);}
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     min-height: 100vh;
+    flex-direction: column;
+    padding-bottom: 60px;
+}
+ .card-container{
+    margin-top: 10px;
+    margin-bottom: 0;
+    position: relative;
+    height: 250px;
+    width: 400px;
+}
+ .card-container .front .images{
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+    padding: 10px 0;
+    height: 70px;
+    
+}
+.card-container .front .images img{width: 70px; height: 50px;}
+ .card-container .front{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0; right:0;
+    background:linear-gradient(45deg, #bdc3c7 , #2c3e50);
+    border-radius: 10px;
+    backface-visibility: hidden;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+    padding: 10px 20px;
+    transform:perspective(1000px) rotateY(0deg);
+    transition:transform .4s ease-out;
+    animation: 1s cubic-bezier(0.16,1,0.3,1) cardEnter;
+}
+  .front .card-number-box{
+    padding:25px 0;
+    font-size: 22px;
+    color:#fff;
+}
+ .name-expire{display: flex; justify-content: space-between; align-items: center;}
+ .box .card-holder-name, .month-year{font-size: 15px; color: #fff; line-height: 25px;}
+ .card-span{font-size: 18px; font-weight: 700;}
+
+  .card-container .back{
+    position: absolute;
+    top:0; right: 0;
+    height: 100%;
+    width: 100%;
+    background:linear-gradient(45deg, #bdc3c7 , #2c3e50);
+    border-radius: 10px;
+    padding: 20px 0;
+    text-align: right;
+    backface-visibility: hidden;
+    box-shadow: 0 15px 25px rgba(0,0,0,.2);
+     transform:perspective(1000px) rotateY(180deg);
+    transition:transform .4s ease-out; 
+}
+@keyframes cardEnter{
+    from{
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+ .card-container .back .strip{
+    background: #000;
+    width: 100%;
+    
+    height: 50px;
+}
+.box{padding: 20px;}
+ .card-container .back .box .cvv-box{
+    height: 50px;
+    padding: 10px;
+    margin-top: 5px;
+    color:#333;
+    background: #fff;
+    border-radius: 5px;
+    width: 100%;
+}
+.back .card-span{display: inline-block; font-size: 20px; line-height: 25px; color: #fff;}
+ .card-container .back .box img{
+    margin: 20px 0 15px 280px;
+    width: 75px; height: 50px;
+}
+.invalid-card, .c-1,.c-2,.c-3,.c-4{display: none;}
+.card-1,.card-2,.card-3,.card-4{display: none;}
+
+
+main form{
+    background: #fff;
+    margin: 20px 0 10px;
+    border-radius: 5px;
+    box-shadow: 0 10px 15px rgba(0,0,0,.1);
+    padding: 20px;
+    width: 600px;
+    /* padding-top: 160px; */
+}
+.input-box{padding: 20px;}
+.input-box input{display: block; width: 100%; padding: 10px; border-radius: 10px; color: #999;
+font-size: 20px; border: 1px solid blue; box-shadow: 3px 3px 10px rgb(192, 182, 182);
+}
+.box-1{ display: flex; align-items: center; padding: 0 20px;}
+.box-a{flex-basis: 50%; max-width: 49%; border: 1px solid blue; padding: 10px 5px; border-radius: 10px; margin-right: 10px;}
+.box-a .month-input{display: inline-block; border: none; outline: none;}
+.year-input{border: none; outline: none;}
+.box-b{flex-basis: 50%; max-width: 50%; margin-left: 10px;
+    letter-spacing: 1px; border: 1px solid blue; border-radius: 10px; padding: 10px;}
+.cvv-input{ border: none; outline: none;}
+.submit{margin: 20px; display: flex; justify-content: center;}
+.btn-lable{ display: block; width: 100%; text-align: center;}
+.submit-btn{display: block; width: 100%; background: green; color: #fff; border: none; outline: none; padding: 10px;
+letter-spacing: 1px; text-transform: capitalize;text-align: center;}
+
+@media screen and (max-width:700px){
+    .card-container{width: 350px;}
+    main form{width: 450px;}
+    .box-a{flex-basis: 65%; max-width: 65%;}
+    .box-b{flex-basis: 34%; max-width: 33%; padding: 0 5px;}
+    .cvv-input{width: 50px; padding: 13px 0;}
+}
+
+@media screen and (max-width:500px){
+    .card-container{width: 350px;}
+    main form{width: 400px;}
+    .box-a{flex-basis: 75%; max-width: 75%;}
+    .box-b{flex-basis: 24%; max-width: 23%; }
+    .cvv-input{width: 30px; padding: 13px 0;}
+}
+
+
+
+
+
+
+
+
+

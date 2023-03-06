@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Gateway- Demo</title>
+    <meta name="description" content="Demo of Payment gateway using Reg Exp">
+    <link rel="stylesheet" href="./css/gate.css">
+
+</head>
+<body>
+    <main>
+        <div class="card-container">
+            <div class="front">
+                <div class="images">
+                    <img src="./img/ccchip.svg" alt="chip">
+                    <img src="./img/chip-broken.svg" alt="broken-chip" class="invalid-card">
+                    <img src="./img/American.png" alt="american-exp" class="card-1">
+                    <img src="./img/MasterCard.png" alt="master-card" class="card-2">
+                    <img src="./img/rupay-card.jpg" alt="rupye-card" class="card-3">
+                    <img src="./img/visa.jpg" alt="visa-card" class="card-4">
+                </div>
+                <div class="card-number-box"></div>
+                <div class="name-expire">
+                    <div class="box">
+                        <span class="card-span"> Card-Holder</span>
+                        <div class="card-holder-name">Full-Name</div>
+                    </div>
+                    <div class="box">
+                        <span class="card-span">Validity</span>
+                        <div class="month-year">
+                            <span class="exp-month">MM</span>
+                            <span>/</span>
+                            <span class="exp-year">YY</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="back">
+                <div class="strip"></div>
+                <div class="box">
+                    <span class="card-span">cvv</span>
+                     <div class="cvv-box"></div>
+                     <img src="./img/American.png" alt="amc-exp" class="c-1">
+                     <img src="./img/MasterCard.png" alt="master-card" class="c-2">
+                     <img src="./img/rupay-card.jpg" alt="rupay-card" class="c-3"> 
+                     <img src="./img/visa.jpg" alt="visa-card" class="c-4">
+                </div>
+            </div>
+        </div>
+
+        <form action="">
+            <div class="input-box">
+                <label for="holder"><input type="text" id="holder" maxlength="16" required placeholder="Enter your card number" class="card-number-input"></label>
+                <span class="error-1"></span>
+            </div>
+            <div class="input-box">
+                <label for="name"><input type="text" id="name"  required placeholder="Enter your full name" class="card-name-input" maxlength="18"></label>
+                <span class="error-2"></span>
+            </div>
+            <div class="box-1">
+                <div class="box-a">
+                    <span>VALID TILL :</span>
+                    <select name="month" id="month" class="month-input">
+                       <option value="month" selected disabled>month</option>
+                       <option value="01"> 01  </option>
+                       <option value="02"> 02  </option>
+                       <option value="03"> 03  </option>
+                       <option value="04"> 04  </option>
+                       <option value="05"> 05  </option>
+                       <option value="06"> 06  </option>
+                       <option value="07"> 07  </option>
+                       <option value="08"> 08  </option>
+                       <option value="09"> 09  </option>
+                       <option value="10"> 10  </option>
+                       <option value="11"> 11  </option>
+                       <option value="12"> 12  </option>
+                    </select>
+                    <span>/</span>
+                    <select name="year" id="year" class="year-input">
+                        <option value="month" selected disabled>Year</option>
+                        <option value="2023"> 2023 </option>
+                        <option value="2024"> 2024 </option>
+                        <option value="2025"> 2025 </option>
+                        <option value="2026"> 2026 </option>
+                        <option value="2027"> 2027 </option>
+                        <option value="2028"> 2028 </option>
+                      
+                     </select>
+                </div>
+                <div class="box-b">
+                        <span>CVV :</span>
+                      <label for="cvv">  <input type="text" required maxlength="3" class="cvv-input" id="cvv"></label>
+                </div>
+            </div>
+            <div class="submit">
+                <label for="submit" class="btn-lable"><input type="submit" value="PAYMENT" class="submit-btn" id="submit"></label>
+            </div>
+        </form>
+    </main>
+    <script src="./java script/gate.js"></script>
+</body>
+</html>
