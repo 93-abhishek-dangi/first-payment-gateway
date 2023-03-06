@@ -142,6 +142,7 @@ letter-spacing: 1px; text-transform: capitalize;text-align: center;}
     .box-a{flex-basis: 75%; max-width: 75%;}
     .box-b{flex-basis: 24%; max-width: 23%; }
     .cvv-input{width: 30px; padding: 13px 0;}
+     .card-container .back .box img{width: 40px; height: 30px; margin-right: 10px !important;}
 }
 
 
